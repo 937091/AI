@@ -1,28 +1,17 @@
-import re
+print("Hello ! i am  a chatbot")
+print("you can say:hii,menu,order,price,thanks,bye")
 
-# Define pattern-response pairs
-pairs = [
-    (r'I am (.*)', lambda match: f"Hello {match.group(1)}, how are you feeling today?"),
-    (r'feeling (.*)', lambda match: f"Good to hear you are feeling {match.group(1)}."),
-    (r'I work (.*)', lambda match: f"Wow, working {match.group(1)} sounds great!"),
-    (r'quit', lambda match: "Bye! Take care.")
-]
 
-def chatbot():
-    print("Hi there! I am a chatbot. Type 'quit' to exit.")
-    while True:
-        user_input = input("You: ")
-        matched = False
-        for pattern, response_func in pairs:
-            match = re.match(pattern, user_input, re.IGNORECASE)
-            if match:
-                print("Bot:", response_func(match))
-                matched = True
-                if pattern == r'quit':
-                    return
-                break
-        if not matched:
-            print("Bot: I'm not sure how to respond to that.")
-
-chatbot()
-
+while True:
+    user=input("you:").lower()
+    if "hi" in user:
+        print("bot:hii! welcome to our shop")
+    elif "menu" in user:
+        print("bot:we have a pizza burger,coke")
+    elif "order" in user:
+        print("bot:great ,tell me what you want to order")
+    elif "thanks" or "thank you" in user:
+        print("bot:welcome")
+        break
+    else :
+         print("bot: sorry!")
